@@ -88,7 +88,7 @@ def parse_sections(text: str):
         lines = [line.strip() for line in action_plan_text.split('\n') if line.strip()]
         for line in lines:
             # Strip standard markdown bullet formats (-, *, 1., [ ], etc.)
-            cleaned = re.sub(r'^(\-\s*|\*\s*|\d+\.\s*|\[\s*\]\s*)', '', line).strip()
+            cleaned = re.sub(r'^(\-|\*|\d+\.|\[\s*\])\s*', '', line).strip()
             if cleaned:
                 action_plan.append(cleaned)
                 
